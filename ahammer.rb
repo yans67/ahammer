@@ -1,6 +1,9 @@
 #!usr/bin/env ruby
-require "optParse"
+# 从当前面目录引入
+$LOAD_PATH << '.'
 
+require "optParse"
+require "version"
 # hash，记录 options 中的命令
 options = {}
 
@@ -12,11 +15,15 @@ optParser = OptionParser.new do |opts|
     opts.separator  "   ahammer -list"
     opts.separator  "   ahammer -version"
 
-    opts.on_tail("-v","--version","print version") do
-        puts "1.1"
-        exit
+    opts.on("-v","--version","print version") do
+       puts Version::VERSION
     end
-    
+    opts.on("-h","--help","commands help") do
+        puts optinos
+    end
+     opts.on("-b","--build","build project") do
+        puts 
+    end
 end
 
 optParser.parse!

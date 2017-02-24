@@ -11,6 +11,21 @@
 
 # xcodebuild build -scheme demo -sdk iphoneos -configuration Release -derivedDataPath build
 
-puts 'xcodebuild build'
+# puts 'xcodebuild build'
 # 3. 将 app 包打包成 ipa
 # xcrun -sdk iphoneos PackageApplication -v path -o path/haha.ipa
+
+# module Xcodebuild
+#     Class Builder
+#         # 默认不传参数:自己识别是否是 pod 工程。
+#         def defalutBuild
+                
+#         end
+        
+#     end
+# end
+require 'fileutils'
+require "/Users/huangyg/Desktop/demo/ahammer/fileutil"
+abc = Abc.getInfo()
+puts "command :build"
+puts abc['targets']
